@@ -5,6 +5,13 @@ PROTMODE
 HEAPSIZE      4096
 STACKSIZE     16384
 
+SEGMENTS
+              _IOSEG IOPL
+
 EXPORTS       DisplayDlgProc
-							AboutDlgProc
+              AboutDlgProc
+              IN8_PORT      1
+              OUT8_PORT     2
+              IN_PORT       1
+              OUT_PORT      2
     
