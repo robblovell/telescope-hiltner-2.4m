@@ -54,5 +54,7 @@ Once the autoexec.bat file has PROGRAMS on the autostart line, anything running 
 Note that all the placement of windows and any other program will also start, so make sure a minimum set of programs are running.
 Make sure Hiltner.exe is running when you shutdown so that the next time the computer boots, it will run.
 
+If you need to rebuild the code, you will need to remove the "PROGRAMS" line from the autoexec.bat and reboot so that you can write the hiltner.exe file.
+
 
 
