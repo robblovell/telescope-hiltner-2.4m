@@ -28,17 +28,17 @@ Once opening the project, just select build all.
 
 ## Files
 
-*.CPP:  These consist of source code.  Only files included in the Hiltner.prj file are used.
-*.H:    Header files.
-low     More source code for any code that talks to an install i/o board.
-iopl    home of iopl.asm which performs direct memory manipulation of i/o boards.  This code must access protected memory and is the reason the Hiltner.def file contains the line:
-^^^
+* .CPP:  These consist of source code.  Only files included in the Hiltner.prj file are used.
+* .H:    Header files.
+* low     More source code for any code that talks to an install i/o board.
+* iopl    home of iopl.asm which performs direct memory manipulation of i/o boards.  This code must access protected * memory and is the reason the Hiltner.def file contains the line:
+```
 SEGMENTS
         _IOSEG IOPL
-^^^
-*.def   Tells the compiler how to link the program and specifies what code access protected memory and what code is used by the display.
-*.rc    Resource files for the windows display code.  This arranges the text and icons in the hiltner window when the program is running.
-*.dlg   Included in the .rc files to arrange text on the screen.
+```
+* .def   Tells the compiler how to link the program and specifies what code access protected memory and what code is used by the display.
+* .rc    Resource files for the windows display code.  This arranges the text and icons in the hiltner window when the program is running.
+* .dlg   Included in the .rc files to arrange text on the screen.
 
 ## Display
 
