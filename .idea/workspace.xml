@@ -80,10 +80,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HILTNER.DEF" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HILTNER.DEF" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HILTNER.DEF">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="19" selection-start="360" selection-end="360" vertical-scroll-proportion="0.32360405">
+            <state line="17" column="12" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TCSCOMM.C" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CLIENT/TCSCOMM.C">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.07614213">
               <folding />
             </state>
           </provider>
@@ -185,7 +194,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="IOPL" />
+              <option name="myItemId" value="CLIENT" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -198,8 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/IOPL/ERRATA" />
       <recent name="$PROJECT_DIR$/CLIENT" />
+      <recent name="$PROJECT_DIR$/IOPL/ERRATA" />
       <recent name="$PROJECT_DIR$/ERRATA" />
     </key>
   </component>
@@ -392,7 +401,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HILTNER.DEF">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="360" selection-end="360" vertical-scroll-proportion="0.32360405">
+        <state line="17" column="12" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CLIENT/TCSCOMM.C">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.07614213">
           <folding />
         </state>
       </provider>
