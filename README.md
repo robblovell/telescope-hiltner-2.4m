@@ -16,13 +16,14 @@ To boot the computer from a cold start, perform the following seance:
     2. Modify/Set 4 bios parameters by mousing to the correct icon in each of three areas and selecting 
     the appropriate icon.
     There are four areas with groups of icons, you will be visiting three of these areas.
-        * Area 1: The right top area, select and auto detect the hard drive.  This will tell the computer 
-        where the C: hard drive is which will allow it to boot.
+        * Area 1: The right top area, select and auto detect the hard drive.  This will tell the 
+        computer where the C: hard drive is which will allow it to boot.
         * Area 2: The bottom right area, select "Optimal Settings".  If you don't do this, the computer 
         does nothing, ignoring you in spiteful silence.
-        * Area 3: The top left area, setup the 2 floppy drives.  This is optional.  Set the 5.5 drive to b: 
-        and the 3.25 drive to a:.  Select highest density (1.44 for the 3.25 drive)
-    3. If you have done this right, press <esc> and save the settings and the computer will boot into OS/2.
+        * Area 3: The top left area, setup the 2 floppy drives.  This is optional.  Set the 5.5 drive 
+        to b: and the 3.25 drive to a:.  Select highest density (1.44 for the 3.25 drive)
+    3. If you have done this right, press <esc> and save the settings and the computer will boot into 
+    OS/2.
 
 ## Building
 
