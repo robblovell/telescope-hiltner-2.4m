@@ -33,7 +33,8 @@ extern int focusmove;
 //  encoders...
 extern void set_encoderpositions ();    // in hooks.cpp
 // initialization ---> "\r"
-extern void initialize_tcs ();      // in hiltner.cpp/**************************  xtcs connect  ***************************/
+extern void initialize_tcs ();      // in hiltner.cpp
+/**************************  xtcs connect  ***************************/
 /*
 		 Initialize the serial port.
  */

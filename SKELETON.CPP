@@ -40,7 +40,8 @@ HAB   hab;
 HWND  hWndFrame, 
       hWndClient;
 CHAR  szTitle[64];
-CHAR szFontFace[]="8.Helv";Display display (hWndClient,0,0,600,390,CLR_BLUE);
+CHAR szFontFace[]="8.Helv";
+Display display (hWndClient,0,0,600,390,CLR_BLUE);
 
 MRESULT EXPENTRY ClientWndProc (HWND,ULONG,MPARAM,MPARAM);
 
