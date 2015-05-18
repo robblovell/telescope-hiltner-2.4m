@@ -12,7 +12,6 @@
 #include <time.h>
 #include "tcscomm.h"
 
-
 static int message();
 static int cosdec=0, ratecor=0;
 
