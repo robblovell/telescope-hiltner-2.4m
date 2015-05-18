@@ -1,0 +1,26 @@
+/* --------------------------------------------------------------------
+                             About Dialog 
+
+Copyright (c) 1995 Michigan Dartmouth MIT Hiltner 2.4 Meter Telescope
+			Written by Robb E. Lovell
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE 10000 
+BEGIN
+	DIALOG "", 10000, 80, 37, 261, 83, FS_BORDER | NOT FS_DLGBORDER | WS_VISIBLE | NOT WS_SAVEBITS, FCF_NOBYTEALIGN
+	PRESPARAMS PP_FONTNAMESIZE , "8.Helv"
+	BEGIN
+		CONTROL "", 10002, 8, 55, 245, 20, WC_STATIC, SS_TEXT | WS_VISIBLE
+		ICON ID_APPNAME, ID_APPNAME, 10, 57, 20, 16, WS_GROUP
+		CTEXT "Hiltner 2.4 Meter Telescope Control System", 10001, 32, 62, 154, 8
+		CONTROL "", 10003, 8, 23, 245, 25, WC_STATIC, SS_TEXT | WS_VISIBLE
+		LTEXT "Written by:", -1, 10, 40, 48, 7
+		LTEXT "Robb E. Lovell", -1, 60, 40, 49, 7
+		LTEXT "For:", -1, 10, 33, 48, 7
+		LTEXT "The Michigan Dartmouth MIT Hiltner 2.4 Meter Telescope", -1, 60, 32, 187, 7
+		LTEXT "Copyright 1995", -1, 60, 24, 48, 7
+		LTEXT "Michigan Dartmouth MIT & Robb Lovell", -1, 110, 24, 134, 7
+		PUSHBUTTON "OK", DID_OK, 90, 4, 40, 14
+	END
+
+END

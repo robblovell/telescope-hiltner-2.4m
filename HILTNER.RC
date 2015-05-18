@@ -1,0 +1,205 @@
+/* -------------------------------------------------------------------
+Michigan Dartmouth MIT Hiltner 2.4 Meter Telescope
+Telescope Control System
+By Robb E. Lovell
+------------------------------------------------------------------- */
+/*
+															Hiltner.rc
+
+			This file contains resource code for the menu, display and icons
+	 of the hiltner telescope control system.
+*/
+#include <os2.h>
+#include "values.h"
+
+ICON ID_APPNAME HILTNER.ICO
+
+MENU ID_APPNAME 
+BEGIN
+	SUBMENU "~Hiltner 2.4M", IDM_THREADS
+	BEGIN
+		MENUITEM "~About...", IDM_ABOUT
+		MENUITEM "~Normal  Mode", 1000
+		MENUITEM "~Debug Mode", 1001
+		MENUITEM "~Diagnostics  Toggle", 1002
+		MENUITEM "~Pause Debug", 1003
+		MENUITEM "~Telescope Model On", 1004
+		MENUITEM "~Telescope Model Off", 1005
+	END
+
+END
+
+STRINGTABLE LOADONCALL MOVEABLE
+BEGIN
+	 ID_APPNAME       "Hiltner 2.4 Meter Telescope Control System"
+END
+
+rcinclude about.dlg
+rcinclude values.dlg
+
+
+DLGTEMPLATE IDD_DISPLAY 
+BEGIN
+	DIALOG "Status", IDD_DISPDLG, 0, 0, 421, 217, NOT FS_DLGBORDER | FS_BORDER | FS_SCREENALIGN | NOT WS_VISIBLE | WS_CLIPSIBLINGS | WS_SAVEBITS, FCF_NOBYTEALIGN
+	BEGIN
+		CONTROL "Sample", 157, 241, 20, 180, 120, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 166, 150, 140, 271, 26, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 104, 0, 50, 241, 63, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 103, 0, 113, 241, 27, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		LTEXT "00", IDD_TIME_HR, 313, 207, 11, 8
+		LTEXT "00", IDD_TIME_MIN, 329, 207, 11, 8
+		LTEXT "00", 105, 379, 207, 10, 8
+		LTEXT "00", 106, 393, 207, 11, 8
+		LTEXT "00", 112, 407, 207, 11, 8
+		LTEXT "Guide", 446, 5, 78, 27, 8
+		LTEXT "000.0", 449, 58, 78, 53, 8
+		LTEXT "000.0", 190, 115, 78, 46, 8
+		LTEXT "Set", 451, 5, 66, 27, 8
+		LTEXT "000.0", 452, 58, 66, 53, 8
+		LTEXT "000.0", 191, 115, 66, 44, 8
+		LTEXT "Trail", 450, 5, 26, 25, 8
+		LTEXT "00.0", 453, 38, 26, 30, 8
+		LTEXT "000.0", 454, 74, 26, 38, 8
+		LTEXT "Rate", 455, 38, 36, 28, 8
+		LTEXT "Length", 456, 74, 34, 34, 10
+		LTEXT "000.0", 457, 115, 26, 40, 8
+		LTEXT "Position Angle", 458, 115, 34, 68, 10
+		LTEXT "Rate Corr.", 462, 5, 54, 44, 8
+		LTEXT "99.999", 460, 58, 54, 53, 8
+		LTEXT "99.999", 461, 115, 54, 47, 8
+		LTEXT "Initialized", 463, 244, 131, 52, 8
+		LTEXT "0000.0", 134, 345, 207, 31, 8
+		LTEXT "-", 146, 63, 180, 4, 8
+		LTEXT "-", 147, 63, 170, 4, 8
+		LTEXT "-", 150, 198, 180, 4, 8
+		LTEXT "-", 151, 198, 170, 4, 8
+		LTEXT "-", 148, 129, 180, 4, 8
+		LTEXT "-", 149, 129, 170, 4, 8
+		CONTROL "Sample", 101, 0, 166, 421, 39, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 102, 1, 140, 150, 26, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		LTEXT "Trailing Off", 115, 182, 24, 55, 10
+		CONTROL "Sample", 117, 0, 20, 241, 30, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 135, 0, 205, 421, 12, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		CONTROL ID_APPNAME, ID_APPNAME, 3, 2, 18, 15, WC_STATIC, SS_ICON | WS_VISIBLE | WS_GROUP
+		LTEXT "/", 126, 324, 207, 4, 8
+		LTEXT "/", 127, 340, 207, 4, 8
+		LTEXT ":", 128, 390, 207, 3, 8
+		LTEXT ":", 129, 404, 207, 3, 8
+		LTEXT "guiding+tracking+trailing", 145, 79, 206, 100, 9
+		LTEXT "At Zenith", 152, 301, 131, 48, 8
+		LTEXT "Model On", 130, 355, 131, 58, 8
+		CONTROL "Hiltner 2.4 Meter Telescope", 1000, 31, 5, 135, 9, WC_STATIC, SS_TEXT | DT_LEFT | DT_TOP | DT_MNEMONIC | WS_VISIBLE | WS_GROUP
+		CONTROL "Sample", 159, 0, 0, 421, 21, WC_STATIC, SS_FGNDFRAME | WS_VISIBLE | WS_GROUP
+		LTEXT "Altitude", 158, 333, 154, 40, 8
+		LTEXT "Julian Date", 160, 273, 154, 52, 8
+		LTEXT "Azimuth", 139, 377, 154, 40, 8
+		LTEXT "00.0", 161, 336, 145, 35, 8
+		LTEXT "0000000.00", 188, 273, 145, 52, 8
+		LTEXT "000.0", 162, 380, 145, 35, 8
+		LTEXT "", 167, 232, 1, 7, 8
+		LTEXT "", 168, 241, 1, 7, 8
+		LTEXT "", 169, 251, 1, 7, 8
+		LTEXT "", 170, 261, 1, 7, 8
+		LTEXT "", 171, 277, 1, 7, 8
+		LTEXT "", 172, 292, 1, 7, 8
+		LTEXT "", 173, 301, 1, 7, 8
+		LTEXT "", 174, 310, 1, 7, 8
+		LTEXT "", 175, 355, 1, 7, 8
+		LTEXT "", 176, 365, 1, 7, 8
+		LTEXT "", 177, 375, 1, 7, 8
+		LTEXT "", 178, 385, 1, 7, 8
+		LTEXT "", 179, 400, 1, 7, 8
+		LTEXT "guiding+tracking+trailing", 180, 208, 206, 101, 9
+		LTEXT "RA:", 113, 60, 207, 17, 8
+		LTEXT "DEC:", 114, 183, 207, 24, 8
+		LTEXT "Guider N S E W G/F", 140, 325, 11, 93, 8
+		LTEXT "Paddle N S E W G/S S I O", 141, 201, 11, 120, 8
+		LTEXT "RA", 443, 58, 100, 15, 8
+		LTEXT "DEC", 444, 115, 100, 21, 8
+		LTEXT "Declination", 142, 436, 191, 48, 8
+		LTEXT "", 2000, 244, 121, 172, 10
+		LTEXT "", 2001, 244, 111, 172, 10
+		LTEXT "", 2002, 244, 101, 172, 10
+		LTEXT "", 2003, 244, 91, 172, 10
+		LTEXT "", 2004, 244, 81, 172, 10
+		LTEXT "", 2005, 244, 71, 172, 10
+		LTEXT "", 2006, 244, 61, 172, 10
+		LTEXT "", 2007, 244, 51, 172, 10
+		LTEXT "", 2008, 244, 41, 172, 10
+		LTEXT "", 2009, 244, 31, 172, 10
+		LTEXT "00", 143, 436, 183, 11, 8
+		LTEXT "00", 144, 450, 183, 11, 8
+		LTEXT "00.0", 181, 465, 183, 19, 8
+		LTEXT "*", 182, 436, 173, 11, 8
+		LTEXT "*", 183, 450, 173, 11, 8
+		LTEXT "*", 184, 465, 173, 19, 8
+		LTEXT "-", 185, 432, 183, 4, 8
+		LTEXT "-", 186, 432, 173, 4, 8
+		LTEXT "Hour Angle", 187, 67, 188, 61, 10
+		LTEXT "999.9", 131, 363, 180, 41, 8
+		LTEXT "*", 133, 363, 170, 40, 8
+		LTEXT "Slit Angle", 132, 363, 190, 54, 8
+		LTEXT "", 2010, 244, 21, 172, 10
+		LTEXT "RA", 189, 133, 188, 55, 10
+		LTEXT "Sidereal Time", IDD_SIDREAL_STR, 5, 144, 76, 8
+		LTEXT "Universal Time", IDD_UNIVERSAL_STR, 5, 155, 76, 8
+		LTEXT "Telescope", 401, 5, 179, 57, 9
+		LTEXT "Next Object", 403, 5, 168, 56, 10
+		LTEXT "*", 109, 67, 170, 12, 8
+		LTEXT "*", 110, 83, 170, 11, 8
+		LTEXT "*", 111, 99, 170, 19, 8
+		LTEXT "00", IDD_SIDE_HR, 86, 144, 11, 8
+		LTEXT "00", IDD_SIDE_MIN, 102, 144, 11, 8
+		LTEXT "00", IDD_SIDE_SEC, 118, 144, 19, 8
+		LTEXT "00", IDD_UNIV_HR, 86, 155, 11, 8
+		LTEXT "00", IDD_UNIV_MIN, 102, 155, 11, 8
+		LTEXT "00", IDD_UNIV_SEC, 118, 155, 19, 8
+		LTEXT "00", 703, 133, 180, 14, 8
+		LTEXT "00", 740, 150, 180, 13, 8
+		LTEXT "00.0", 741, 167, 180, 25, 8
+		LTEXT "00", 903, 67, 180, 13, 8
+		LTEXT "00", 940, 83, 180, 13, 8
+		LTEXT "00.0", 941, 99, 180, 25, 8
+		LTEXT "Epoch", 447, 263, 189, 40, 9
+		LTEXT "0000.0", 448, 263, 180, 43, 8
+		LTEXT "Airmass", 118, 313, 190, 44, 8
+		LTEXT "0.000", 119, 313, 180, 35, 8
+		LTEXT "*", 138, 313, 170, 34, 8
+		LTEXT "Dec", 108, 202, 190, 47, 8
+		LTEXT "00", 120, 202, 180, 12, 8
+		LTEXT "00", 121, 220, 180, 11, 8
+		LTEXT "00", 122, 237, 180, 22, 8
+		LTEXT "00000.0", IDD_FOCUS, 189, 155, 44, 8
+		LTEXT "000.0", IDD_ROTATOR, 221, 144, 34, 8
+		LTEXT "Tracking", 440, 5, 88, 41, 10
+		LTEXT "00.0000", 441, 58, 90, 53, 8
+		LTEXT "00.000", 445, 115, 90, 46, 8
+		LTEXT "Dome Azimuth", IDD_DOME_STR, 5, 129, 66, 8
+		LTEXT "000.0", IDD_DOME, 76, 129, 42, 8
+		LTEXT "Dome Error", 136, 5, 116, 59, 9
+		LTEXT "000.0", 137, 76, 117, 42, 8
+		LTEXT "*", 123, 202, 170, 12, 8
+		LTEXT "*", 124, 220, 170, 12, 8
+		LTEXT "*", 125, 237, 170, 20, 8
+		LTEXT "*", 1043, 133, 170, 13, 8
+		LTEXT "*", 1049, 150, 170, 13, 8
+		LTEXT "*", 1050, 167, 170, 19, 8
+		LTEXT "*", 163, 263, 170, 40, 8
+		LTEXT "*", 164, 459, 90, 25, 8
+		LTEXT "*", 165, 487, 90, 25, 8
+		LTEXT ":", 153, 98, 155, 4, 8
+		LTEXT ":", 154, 114, 155, 4, 8
+		LTEXT ":", 155, 98, 144, 4, 8
+		LTEXT ":", 156, 114, 144, 4, 8
+		LTEXT "Auto Guider Off", 464, 166, 65, 71, 9
+		LTEXT "Tracking Off", 465, 166, 88, 66, 10
+		LTEXT "Drives Off", 466, 5, 207, 47, 8
+		LTEXT "Auto Dome Off", 467, 137, 129, 78, 8
+		LTEXT "Cos Dec Off", 468, 166, 78, 66, 8
+		LTEXT "Focus", IDD_FOCUS_STR, 155, 155, 30, 8
+		LTEXT "Rotator Angle", IDD_ROTATOR_STR, 155, 142, 62, 10
+		LTEXT "Rate Corr Off", 107, 166, 54, 67, 8
+		LTEXT "Dome Home 320 Off", 116, 137, 117, 99, 8
+	END
+
+END

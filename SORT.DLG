@@ -1,0 +1,27 @@
+/* --------------------------------------------------------------------
+                         Sorting Thread Dialog
+                              Chapter 12
+
+                    Real World Programming for OS/2
+             Copyright (c) 1993 Blain, Delimon, and English
+-------------------------------------------------------------------- */
+
+DLGTEMPLATE IDD_SORTINGDLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG  "Sorting Thread", IDD_SORTINGDLG, 56, 92, 128, 47, 0, 
+            FCF_TITLEBAR | FCF_NOBYTEALIGN | FCF_NOMOVEWITHOWNER
+            PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    BEGIN
+       LTEXT           "TID:",              -1,       4, 36, 33,  7
+       RTEXT           "0000",    IDC_THREADID,      35, 36, 21,  7
+       LTEXT           "Percent Complete:", -1,       5, 29, 69,  7
+       LTEXT           "%",                 -1,     103, 29, 10,  7
+       RTEXT           "0",     IDC_PERCENT,         82, 29, 20,  7
+       CONTROL         "", IDC_PERCENTBAR, 5, 18, 118, 10, WC_STATIC, 
+                       SS_TEXT | WS_VISIBLE
+       PUSHBUTTON      "Kill",    IDC_KILL,           4,  4, 40, 10
+       PUSHBUTTON      "Suspend", IDC_SUSPEND,       44,  4, 40, 10
+       PUSHBUTTON      "Up",      IDC_UPPRIORITY,    84,  4, 20, 10
+       PUSHBUTTON      "Dwn",     IDC_DOWNPRIORITY, 104,  4, 20, 10
+    END
+END
