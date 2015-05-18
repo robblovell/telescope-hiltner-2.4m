@@ -12,7 +12,7 @@ By Robb E. Lovell
 #include <os2.h>
 #include "values.h"
 
-ICON ID_APPNAME HILTNER.ICO
+POINTER ID_APPNAME HILTNER.ICO
 
 MENU ID_APPNAME 
 BEGIN
