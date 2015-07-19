@@ -15,8 +15,7 @@
 static int message();
 static int cosdec=0, ratecor=0;
 
-int
-tcs_open(port)
+int tcs_open(port)
 char *port;
 {
 	int	fd,i;
@@ -76,8 +75,7 @@ char *port;
 	return fd;
 }
 
-int
-sendtotcs(fd_tcs, cmdto)
+int sendtotcs(fd_tcs, cmdto)
 	int	fd_tcs;
 	char	*cmdto;
 {
@@ -107,8 +105,7 @@ sendtotcs(fd_tcs, cmdto)
 	return 0;
 }
 
-int
-rcvfromtcs(fd_tcs, buf, max)
+int rcvfromtcs(fd_tcs, buf, max)
 	int	fd_tcs, max;
 	char	*buf;
 {
@@ -132,8 +129,7 @@ rcvfromtcs(fd_tcs, buf, max)
 	return i;
 }
 
-int
-tcs_init(fd_tcs)
+int tcs_init(fd_tcs)
 	int	fd_tcs;
 {
 	int	i;
@@ -154,8 +150,7 @@ tcs_init(fd_tcs)
 }
 
 
-static int
-tcsnresp(fd)
+static int tcsnresp(fd)
 	int	fd;
 {
 	message("TCS timed out, wait...");
@@ -175,8 +170,7 @@ static char tcsok[] = "TCSREADY";
 /* What the TCS sends us when it's unhappy in terse mode */
 static char tcserr[] = "TCSERROR";
 
-int
-tcs_sync(fd, ns)
+int tcs_sync(fd, ns)
 	int	fd;
 	int	ns;
 {
@@ -227,8 +221,7 @@ tcs_sync(fd, ns)
  * (including timeout), 0 on success prompt (TCSREADY), 1 on bad
  * prompt (TCSERROR).  Timeout is currently 10 seconds.
  */
-int
-tcs_pwait(fd, nsec)
+int tcs_pwait(fd, nsec)
 	int	fd, nsec;
 {
 	int	i,j,n;
@@ -269,8 +262,7 @@ tcs_pwait(fd, nsec)
 static int	nbuf;
 static char	expectbuf[512];
 
-int
-tcs_expect(fd, expstr, numsec)
+int tcs_expect(fd, expstr, numsec)
 	int fd,numsec;
 	char *expstr;
 {
@@ -315,8 +307,7 @@ tcs_expect(fd, expstr, numsec)
 }
 
 /* Set dome position encoders */
-int
-tcs_setdome(fd, domepos)
+int tcs_setdome(fd, domepos)
 	int fd;
 	double domepos;
 {
@@ -345,8 +336,7 @@ tcs_setdome(fd, domepos)
 }
 
 /* Set instrument rotator encoders */
-int
-tcs_setrot(fd, rotpos)
+int tcs_setrot(fd, rotpos)
 	int fd;
 	double rotpos;
 {
@@ -375,8 +365,7 @@ tcs_setrot(fd, rotpos)
 }
 
 /* Set guide/set/offset rate */
-int
-tcs_setrate(fd, which, rate)
+int tcs_setrate(fd, which, rate)
 	int fd, which;
 	double rate;
 {
@@ -419,8 +408,7 @@ tcs_setrate(fd, which, rate)
 }
 
 /* Set focus encoder */
-int
-tcs_setfocus(fd, pos)
+int tcs_setfocus(fd, pos)
 	int fd;
 	double pos;
 {
@@ -448,8 +436,7 @@ tcs_setfocus(fd, pos)
 }
 
 /* Set TCS display epoch */
-int
-tcs_setepoch(fd, epoch)
+int tcs_setepoch(fd, epoch)
 	int fd;
 	double epoch;
 {
@@ -477,8 +464,7 @@ tcs_setepoch(fd, epoch)
 }
 
 /* Toggle/set/clear COSDEC */
-int
-tcs_cosdec(fd, what)
+int tcs_cosdec(fd, what)
 	int fd,what;
 {
 	int	i,val;
@@ -513,8 +499,7 @@ tcs_cosdec(fd, what)
 }
 
 /* Toggle/set/clear RATECOR */
-int
-tcs_ratecor(fd, what)
+int tcs_ratecor(fd, what)
 	int fd,what;
 {
 	int	i,val;
@@ -549,8 +534,7 @@ tcs_ratecor(fd, what)
 }
 
 /* Send next coords */
-int
-tcs_sendcoord(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
+int tcs_sendcoord(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
 	int	fd, rah, ram, decsi, dech, decm;
 	double	ras, decs, epoch;
 {
@@ -594,8 +578,7 @@ tcs_sendcoord(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
 	return i;
 }
 
-int
-tcs_cancel(fd)
+int tcs_cancel(fd)
 	int	fd;
 {
 	int	i;
@@ -606,8 +589,7 @@ tcs_cancel(fd)
 	return i;
 }
 
-int
-tcs_stop(fd)
+int tcs_stop(fd)
 	int	fd;
 {
 	int	i;
@@ -619,8 +601,7 @@ tcs_stop(fd)
 	return i;
 }
 
-int
-tcs_go(fd)
+int tcs_go(fd)
 	int	fd;
 {
 	int	i;
@@ -631,8 +612,7 @@ tcs_go(fd)
 	return i;
 }
 
-int
-tcs_offset(fd, raoff, decoff, epoch)
+int tcs_offset(fd, raoff, decoff, epoch)
 	int	fd;
 	double	raoff, decoff, epoch;
 {
@@ -677,8 +657,7 @@ tcs_offset(fd, raoff, decoff, epoch)
 }
 
 
-int
-tcs_trail(fd, rate, length, pa)
+int tcs_trail(fd, rate, length, pa)
 	int	fd;
 	double	rate, length, pa;
 {
@@ -721,8 +700,7 @@ tcs_trail(fd, rate, length, pa)
 	
 }
 
-int
-tcs_track(fd, rarate, decrate)
+int tcs_track(fd, rarate, decrate)
 	int	fd;
 	double	rarate, decrate;
 {
@@ -756,7 +734,7 @@ tcs_track(fd, rarate, decrate)
 	return i;
 }
 
-tcs_toggletrail(fd)
+int tcs_toggletrail(fd)
 	int	fd;
 {
 	sendtotcs(fd, "\024");
@@ -765,8 +743,7 @@ tcs_toggletrail(fd)
 }
 
 /* Set RA/Dec encoders to position */
-int
-tcs_encode(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
+int tcs_encode(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
 	int	fd, rah, ram, decsi, dech, decm;
 	double	ras, decs, epoch;
 {
@@ -807,7 +784,7 @@ tcs_encode(fd, rah, ram, ras, decsi, dech, decm, decs, epoch)
 	return i;
 }
 
-tcs_stow(fd)
+int tcs_stow(fd)
 	int	fd;
 {
 	int	i;
@@ -822,10 +799,10 @@ tcs_stow(fd)
 		message("Telescope stowed");
 		return 0;
 	}
+	return 0;
 }
 
-int
-tcs_setut(fd)
+int tcs_setut(fd)
 	int	fd;
 {
 	int	i;
@@ -875,8 +852,7 @@ tcs_setut(fd)
 	}
 }
 
-int
-tcs_getstatus(fd, which, str)
+int tcs_getstatus(fd, which, str)
 	int	fd, which;
 	char	*str;
 {
@@ -912,15 +888,14 @@ tcs_getstatus(fd, which, str)
 	return slen;
 }
 
-tcs_toggledome(fd)
+int tcs_toggledome(fd)
 	int	fd;
 {
 	sendtotcs(fd, "\004");
 	return 0;
 }
 
-int
-tcs_kickdome(fd)
+int tcs_kickdome(fd)
 	int	fd;
 {
 	int	i,slen,stat;
@@ -956,8 +931,7 @@ tcs_kickdome(fd)
 	return 0;		
 }
 
-int
-tcs_gettelpos(fd, ra, dec, epoch, rot, foc)
+int tcs_gettelpos(fd, ra, dec, epoch, rot, foc)
 	int	fd;
 	double	*ra, *dec, *epoch, *rot, *foc;
 {
@@ -972,8 +946,7 @@ tcs_gettelpos(fd, ra, dec, epoch, rot, foc)
 	return 0;
 }
 
-int
-tcs_gettelenc(fd, ha, den, rap, dep)
+int tcs_gettelenc(fd, ha, den, rap, dep)
 	int	fd;
 	double	*ha, *den, *rap, *dep;
 {
